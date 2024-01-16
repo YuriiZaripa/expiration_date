@@ -1,48 +1,76 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
+import 'custom_button.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const StartPage());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class StartPage extends StatefulWidget {
+  const StartPage({Key? key}) : super(key: key);
+
+  @override
+  State<StartPage> createState() => _StartPageState();
+}
+
+class _StartPageState extends State<StartPage> {
+  final List<String> buttonNames = [
+    'DAILY RAPORT',
+    'WEEKLY RAPORT',
+    'ADD PRODUCT',
+    'ADD SUPLIER',
+    'ALL SUPLIERS',
+    'ALL PRODUCTS',
+    '',
+    '',
+    '',
+    'OTHER FIELDS',
+    'OTHER FIELDS',
+    'OTHER FIELDS',
+    'OTHER FIELDS',
+    'OTHER FIELDS',
+    'OTHER FIELDS',
+    'OTHER FIELDS',
+    'OTHER FIELDS',
+
+  ];
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Expiration Date',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
-
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text('Expiration Date'),
-      ),
-      body: const Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [Text(
-              'Lets`s start!!!',
-              style: TextStyle(fontSize: 30,),
+      home: Scaffold(
+        appBar: AppBar(
+          centerTitle: true,
+          backgroundColor: Colors.redAccent,
+          title: const Text(
+            'OKWINE',
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        body: Stack(
+          alignment: Alignment.bottomCenter,
+          children: [
+            SvgPicture.asset('images/chees.svg', width: 200),
+            Center(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: SizedBox(
+                  width: 350,
+                  child: ListView.builder(
+                    itemCount: buttonNames.length,
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: CustomButton(name: buttonNames[index]),
+                      );
+                    },
+                  ),
+                ),
+              ),
             ),
           ],
         ),

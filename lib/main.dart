@@ -41,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [Text(
-              'Lest`s start!!!',
+              'Lets`s start!!!',
               style: TextStyle(fontSize: 30,),
             ),
           ],

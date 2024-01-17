@@ -15,27 +15,6 @@ class StartPage extends StatefulWidget {
 }
 
 class _StartPageState extends State<StartPage> {
-  final List<String> buttonNames = [
-    'DAILY RAPORT',
-    'WEEKLY RAPORT',
-    'ADD PRODUCT',
-    'ADD SUPLIER',
-    'ALL SUPLIERS',
-    'ALL PRODUCTS',
-    '',
-    '',
-    '',
-    'OTHER FIELDS',
-    'OTHER FIELDS',
-    'OTHER FIELDS',
-    'OTHER FIELDS',
-    'OTHER FIELDS',
-    'OTHER FIELDS',
-    'OTHER FIELDS',
-    'OTHER FIELDS',
-
-  ];
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -54,20 +33,24 @@ class _StartPageState extends State<StartPage> {
         body: Stack(
           alignment: Alignment.bottomCenter,
           children: [
-            SvgPicture.asset('images/chees.svg', width: 200),
+            SvgPicture.asset(
+              'images/chees.svg',
+              width: 300,
+            ),
             Center(
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: SizedBox(
                   width: 350,
-                  child: ListView.builder(
-                    itemCount: buttonNames.length,
-                    itemBuilder: (context, index) {
-                      return Padding(
-                        padding: const EdgeInsets.all(5.0),
-                        child: CustomButton(name: buttonNames[index]),
-                      );
-                    },
+                  child: ListView(
+                    children: const [
+                      CustomButton(name: 'DAILY REPORT'),
+                      CustomButton(name: 'WEEKLY REPORT'),
+                      CustomButton(name: 'ADD PRODUCT'),
+                      CustomButton(name: 'ADD SUPPLIER'),
+                      CustomButton(name: 'ALL SUPPLIERS'),
+                      CustomButton(name: 'ALL PRODUCTS'),
+                    ],
                   ),
                 ),
               ),

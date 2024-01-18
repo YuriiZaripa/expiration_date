@@ -39,12 +39,35 @@ class _HomePageState extends State<HomePage> {
                 width: 350,
                 child: ListView(
                   children: [
-                    CustomButton(label: 'DAILY REPORT', onPress: () {}),
-                    CustomButton(label: 'WEEKLY REPORT', onPress: () {}),
-                    CustomButton(label: 'ADD PRODUCT', onPress: () {}),
-                    CustomButton(label: 'ADD SUPPLIER', onPress: () {}),
-                    CustomButton(label: 'ALL SUPPLIERS', onPress: () {}),
-                    CustomButton(label: 'ALL PRODUCTS', onPress: () {}),
+                    Padding(
+                      padding: const EdgeInsets.all(3.0),
+                      child:
+                          CustomButton(label: 'DAILY REPORT', onPress: () {}),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(3.0),
+                      child:
+                          CustomButton(label: 'WEEKLY REPORT', onPress: () {}),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(3.0),
+                      child: CustomButton(label: 'ADD PRODUCT', onPress: () {}),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(3.0),
+                      child:
+                          CustomButton(label: 'ADD SUPPLIER', onPress: () {}),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(3.0),
+                      child:
+                          CustomButton(label: 'ALL SUPPLIERS', onPress: () {}),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(3.0),
+                      child:
+                          CustomButton(label: 'ALL PRODUCTS', onPress: () {}),
+                    ),
                   ],
                 ),
               ),

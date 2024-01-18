@@ -28,9 +28,14 @@ class _HomePageState extends State<HomePage> {
       body: Stack(
         alignment: Alignment.bottomCenter,
         children: [
-          SvgPicture.asset(
-            'images/cheese.svg',
-            width: 300,
+          Padding(
+            padding: const EdgeInsets.only(
+              bottom: 20,
+            ),
+            child: SvgPicture.asset(
+              'images/cheese.svg',
+              width: 300,
+            ),
           ),
           Center(
             child: Padding(
@@ -40,33 +45,53 @@ class _HomePageState extends State<HomePage> {
                 child: ListView(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.all(3.0),
-                      child:
-                          CustomButton(label: 'DAILY REPORT', onPress: () {}),
+                      padding: const EdgeInsets.only(
+                        bottom: 15,
+                      ),
+                      child: CustomButton(
+                        label: 'DAILY REPORT',
+                        onPress: () {},
+                      ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(3.0),
-                      child:
-                          CustomButton(label: 'WEEKLY REPORT', onPress: () {}),
+                      padding: const EdgeInsets.only(
+                        bottom: 15,
+                      ),
+                      child: CustomButton(
+                        label: 'WEEKLY REPORT',
+                        onPress: () {},
+                      ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(3.0),
-                      child: CustomButton(label: 'ADD PRODUCT', onPress: () {}),
+                      padding: const EdgeInsets.only(
+                        bottom: 15,
+                      ),
+                      child: CustomButton(
+                        label: 'ADD PRODUCT',
+                        onPress: () {},
+                      ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(3.0),
-                      child:
-                          CustomButton(label: 'ADD SUPPLIER', onPress: () {}),
+                      padding: const EdgeInsets.only(
+                        bottom: 15,
+                      ),
+                      child: CustomButton(
+                        label: 'ADD SUPPLIER',
+                        onPress: () {},
+                      ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(3.0),
-                      child:
-                          CustomButton(label: 'ALL SUPPLIERS', onPress: () {}),
+                      padding: const EdgeInsets.only(
+                        bottom: 15,
+                      ),
+                      child: CustomButton(
+                        label: 'ALL SUPPLIERS',
+                        onPress: () {},
+                      ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(3.0),
-                      child:
-                          CustomButton(label: 'ALL PRODUCTS', onPress: () {}),
+                    CustomButton(
+                      label: 'ALL PRODUCTS',
+                      onPress: () {},
                     ),
                   ],
                 ),

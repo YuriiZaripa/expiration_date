@@ -1,13 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
-  final String name;
+  final String label;
+  final Function() onPress;
 
-  const CustomButton({
-    super.key,
-    required this.name,
-  });
+  const CustomButton({super.key, required this.label, required this.onPress});
 
   @override
   Widget build(BuildContext context) {
@@ -26,9 +23,9 @@ class CustomButton extends StatelessWidget {
           ),
           backgroundColor: MaterialStateProperty.all(Colors.black54),
         ),
-        onPressed: () {},
+        onPressed: onPress,
         child: Text(
-          name,
+          label,
           style: const TextStyle(fontSize: 20, color: Colors.white),
         ),
       ),

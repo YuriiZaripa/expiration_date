@@ -1,7 +1,9 @@
+import 'package:expiration_date/core/thema/app_colors.dart';
+import 'package:expiration_date/pages/supplier_page/supplier_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../custom_button.dart';
+import '../widgets/custom_button.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -14,13 +16,14 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.mainWhite,
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.redAccent,
+        backgroundColor: AppColors.mainRed,
         title: const Text(
           'OKWINE',
           style: TextStyle(
-            color: Colors.white,
+            color: AppColors.mainWhite,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -86,7 +89,14 @@ class _HomePageState extends State<HomePage> {
                       ),
                       child: CustomButton(
                         label: 'ALL SUPPLIERS',
-                        onPress: () {},
+                        onPress: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const SupplierPage(),
+                            ),
+                          );
+                        },
                       ),
                     ),
                     CustomButton(

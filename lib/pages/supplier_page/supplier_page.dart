@@ -1,8 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:expiration_date/domaine/entities/supplier.dart';
 import 'package:expiration_date/pages/supplier_page/widgets/supplier_tile_list.dart';
 import 'package:expiration_date/widgets/custom_scaffold_with_tabbar.dart';
 import 'package:flutter/material.dart';
 
+@RoutePage()
 class SupplierPage extends StatelessWidget {
   const SupplierPage({super.key});
 

@@ -1,10 +1,13 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:expiration_date/core/thema/app_colors.dart';
 import 'package:expiration_date/pages/supplier_page/supplier_page.dart';
+import 'package:expiration_date/router/routes.gr.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../widgets/custom_button.dart';
 
+@RoutePage()
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -90,11 +93,8 @@ class _HomePageState extends State<HomePage> {
                       child: CustomButton(
                         label: 'ALL SUPPLIERS',
                         onPress: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const SupplierPage(),
-                            ),
+                          context.router.push(
+                            SupplierRoute(),
                           );
                         },
                       ),

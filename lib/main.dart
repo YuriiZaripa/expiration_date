@@ -1,10 +1,10 @@
-import 'package:expiration_date/pages/home_page.dart';
+import 'package:expiration_date/router/routes.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  var appRouter = AppRouter();
   runApp(
-    const MaterialApp(
-      home: HomePage(),
-    ),
+    MaterialApp.router(routerConfig: appRouter.config(),),
   );
 }

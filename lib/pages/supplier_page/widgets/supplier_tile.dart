@@ -19,12 +19,17 @@ class SupplierTile extends StatelessWidget {
         supplier.supplierName,
         style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
       ),
-      subtitle: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text('$notifyingText: ${supplier.period} days'),
-          Text('sale: ${supplier.sale} %')
-        ],
+      subtitle: Padding(
+        padding: const EdgeInsets.only(
+          top: 10,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text('$notifyingText: ${supplier.period} days'),
+            Text('sale: ${supplier.sale} %')
+          ],
+        ),
       ),
     );
   }

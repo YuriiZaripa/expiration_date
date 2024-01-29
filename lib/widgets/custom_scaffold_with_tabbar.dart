@@ -4,14 +4,10 @@ import 'package:flutter/material.dart';
 class CustomScaffoldWithTabBar extends StatelessWidget {
   const CustomScaffoldWithTabBar({
     super.key,
-    required this.exchangeList,
-    required this.writeOffList,
-    required this.returnList,
+    required this.body,
   });
 
-  final Widget exchangeList;
-  final Widget writeOffList;
-  final Widget returnList;
+  final Widget body;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +17,13 @@ class CustomScaffoldWithTabBar extends StatelessWidget {
         backgroundColor: AppColors.mainWhite,
         appBar: AppBar(
           centerTitle: true,
-          title: const Text('SUPPLIER'),
+          title: const Text(
+            'SUPPLIERS',
+            style: TextStyle(
+              letterSpacing: 1,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
           backgroundColor: AppColors.mainRed,
           elevation: 15,
           shadowColor: AppColors.mainRed,
@@ -89,15 +91,16 @@ class CustomScaffoldWithTabBar extends StatelessWidget {
                               color: AppColors.mainBlack,
                               width: 2,
                             ),
+                            borderRadius: BorderRadius.circular(5),
                           ),
                           tabs: [
                             Tab(
                               child: Container(
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(3),
+                                  borderRadius: BorderRadius.circular(5),
                                   border: Border.all(
                                     color: AppColors.mainBlack,
-                                    width: 1,
+                                    width: 2,
                                   ),
                                 ),
                                 padding: const EdgeInsets.all(8),
@@ -109,9 +112,11 @@ class CustomScaffoldWithTabBar extends StatelessWidget {
                             Tab(
                               child: Container(
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(3),
+                                  borderRadius: BorderRadius.circular(5),
                                   border: Border.all(
-                                      color: AppColors.mainBlack, width: 1),
+                                    color: AppColors.mainBlack,
+                                    width: 2,
+                                  ),
                                 ),
                                 padding: const EdgeInsets.all(8),
                                 child: const Text(
@@ -122,9 +127,11 @@ class CustomScaffoldWithTabBar extends StatelessWidget {
                             Tab(
                               child: Container(
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(3),
+                                  borderRadius: BorderRadius.circular(5),
                                   border: Border.all(
-                                      color: AppColors.mainBlack, width: 1),
+                                    color: AppColors.mainBlack,
+                                    width: 2,
+                                  ),
                                 ),
                                 padding: const EdgeInsets.all(8),
                                 child: const Text(
@@ -142,13 +149,7 @@ class CustomScaffoldWithTabBar extends StatelessWidget {
             ),
           ),
         ),
-        body: TabBarView(
-          children: [
-            exchangeList,
-            writeOffList,
-            returnList,
-          ],
-        ),
+        body: body,
       ),
     );
   }

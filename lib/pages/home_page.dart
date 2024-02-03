@@ -1,4 +1,5 @@
 import 'package:expiration_date/core/thema/app_colors.dart';
+import 'package:expiration_date/pages/producr_page/product_page.dart';
 import 'package:expiration_date/pages/supplier_page/supplier_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -101,7 +102,14 @@ class _HomePageState extends State<HomePage> {
                     ),
                     CustomButton(
                       label: 'ALL PRODUCTS',
-                      onPress: () {},
+                      onPress: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const ProductPage(),
+                            ),
+                          );
+                        },
                     ),
                   ],
                 ),

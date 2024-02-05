@@ -20,6 +20,7 @@ class CustomScaffoldWithTabBar extends StatelessWidget {
           title: const Text(
             'SUPPLIERS',
             style: TextStyle(
+              color: AppColors.mainWhite,
               letterSpacing: 1,
               fontWeight: FontWeight.w600,
             ),

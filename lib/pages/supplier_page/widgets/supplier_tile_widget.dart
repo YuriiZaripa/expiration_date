@@ -1,4 +1,4 @@
-import 'package:expiration_date/domaine/entities/supplier.dart';
+import 'package:expiration_date/domain/entities/supplier.dart';
 import 'package:flutter/material.dart';
 
 class SupplierTile extends StatelessWidget {

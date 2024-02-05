@@ -1,10 +1,9 @@
 import 'package:expiration_date/core/thema/app_colors.dart';
-import 'package:expiration_date/pages/producr_page/product_page.dart';
+import 'package:expiration_date/pages/product_page/product_page.dart';
 import 'package:expiration_date/pages/supplier_page/supplier_page.dart';
+import 'package:expiration_date/widgets/custom_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
-import '../widgets/custom_button.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -24,7 +23,7 @@ class _HomePageState extends State<HomePage> {
         title: const Text(
           'OKWINE',
           style: TextStyle(
-            color: AppColors.mainWhite,
+            color: AppColors.white,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -103,13 +102,13 @@ class _HomePageState extends State<HomePage> {
                     CustomButton(
                       label: 'ALL PRODUCTS',
                       onPress: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const ProductPage(),
-                            ),
-                          );
-                        },
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ProductPage(),
+                          ),
+                        );
+                      },
                     ),
                   ],
                 ),

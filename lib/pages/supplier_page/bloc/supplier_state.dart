@@ -1,5 +1,5 @@
 import 'package:expiration_date/core/enums/enums.dart';
-import 'package:expiration_date/domaine/entities/suppliers_by_conditions.dart';
+import 'package:expiration_date/domain/entities/suppliers_by_conditions.dart';
 
 class SupplierState {
   const SupplierState({
@@ -11,8 +11,6 @@ class SupplierState {
   final BlocStatus blocStatus;
   final SuppliersByConditions? suppliers;
   final String? errorText;
-
-  
 
   SupplierState copyWith({
     required BlocStatus blocStatus,

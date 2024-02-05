@@ -6,6 +6,8 @@ sealed class UrlConstants {
   static const String baseUrl = 'http://$IP_ADDRES:8080/product-expiration-date/api/v1';
   // static const String baseUrl = 'http://localhost:8080/product-axpiration-date/api/v1';
 
-  static const String suppliers = '/suppliers';
-  static const String suppliersByCondition = '/suppliers/byReturnConditionType';
+  static const String suppliersUrl = '/suppliers';
+  static const String suppliersByConditionUrl = '/suppliers/byReturnConditionType';
+
+  static const String productsUrl = '/products';
 }

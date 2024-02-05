@@ -1,5 +1,6 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:expiration_date/domaine/entities/supplier.dart';
+
+
+import 'package:expiration_date/domain/entities/supplier.dart';
 
 class SuppliersByConditions {
   final List<Supplier> exchange;

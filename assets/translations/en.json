@@ -1,0 +1,23 @@
+{
+  "daily_report": "DAILY REPORT",
+  "weekly_report": "WEEKLY REPORT",
+  "add_product": "ADD PRODUCT",
+  "add_supplier": "ADD SUPPLIER",
+  "all_supplier": "ALL SUPPLIERS",
+  "all_products": "ALL PRODUCTS",
+
+  "suppliers": "SUPPLIERS",
+  "exchange": "EXCHANGE",
+  "write_off": "WRITE-OFF",
+  "regular": "RETURN",
+  "discount_period": "Discount period",
+  "notify_period": "Notify period",
+  "days": "days",
+  "sale": "sale",
+
+  "products": "PRODUCTS",
+  "search": "Search",
+  "produced": "Produced",
+  "expiration_date": "Expiration date",
+  "discount": "Discount"
+}

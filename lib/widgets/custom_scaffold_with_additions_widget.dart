@@ -1,4 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:expiration_date/core/thema/app_colors.dart';
+import 'package:expiration_date/generated/locale_keys.g.dart';
 import 'package:flutter/material.dart';
 
 class CustomScaffoldWithAdditionsWidget extends StatelessWidget {
@@ -20,9 +22,9 @@ class CustomScaffoldWithAdditionsWidget extends StatelessWidget {
       appBar: AppBar(
           centerTitle: true,
           backgroundColor: AppColors.mainRed,
-          title: const Text(
-            'PRODUCTS',
-            style: TextStyle(
+          title: Text(
+            LocaleKeys.products.tr(),
+            style: const TextStyle(
               color: AppColors.white,
               fontWeight: FontWeight.bold,
             ),

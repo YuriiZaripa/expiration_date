@@ -1,5 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:expiration_date/core/thema/app_colors.dart';
 import 'package:expiration_date/domain/entities/product.dart';
+import 'package:expiration_date/generated/locale_keys.g.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -97,7 +99,7 @@ class ProductListTileWidget extends StatelessWidget {
                               product.produced != null
                                   ? Column(
                                       children: [
-                                        const Text('Produced:'),
+                                        Text('${LocaleKeys.produced.tr()}:'),
                                         Text(
                                             formatter.format(product.produced!))
                                       ],
@@ -105,7 +107,7 @@ class ProductListTileWidget extends StatelessWidget {
                                   : const SizedBox(),
                               Column(
                                 children: [
-                                  const Text('Expiration date:'),
+                                  Text('${LocaleKeys.expiration_date.tr()}:'),
                                   Text(
                                       formatter.format(product.expirationDate)),
                                 ],
@@ -132,7 +134,7 @@ class ProductListTileWidget extends StatelessWidget {
                     width: 150,
                     child: Center(
                       child: Text(
-                        'Discount: ${product.sku.supplier.sale}%',
+                        '${LocaleKeys.discount.tr()}: ${product.sku.supplier.sale}%',
                         style: const TextStyle(
                             color: AppColors.white,
                             fontSize: 15,

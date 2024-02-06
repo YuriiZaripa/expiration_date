@@ -1,0 +1,23 @@
+{
+  "daily_report": "ЩОДЕННИЙ ЗВІТ",
+  "weekly_report": "ТИЖНЕВИЙ ЗВІТ",
+  "add_product": "ДОДАТИ ПРОДУКТ",
+  "add_supplier": "ДОДАТИ ПОСТАЧАЛЬНИКА",
+  "all_supplier": "ВСІ ПОСТАЧАЛЬНИКИ",
+  "all_products": "ВСІ ПРОДУКТИ",
+
+  "suppliers": "ПОСТАЧАЛЬНИКИ",
+  "exchange": "ФІЗОБМІН",
+  "write_off": "СПИСАННЯ",
+  "regular": "ПОВЕРНЕННЯ",
+  "discount_period": "Знижка за",
+  "notify_period": "Повідомити за",
+  "days": "днів",
+  "sale": "знижка",
+
+  "products": "ПРОДУКТИ",
+  "search": "Пошук",
+  "produced": "Вироблено",
+  "expiration_date": "Строк придатності",
+  "discount": "Знижка"
+}

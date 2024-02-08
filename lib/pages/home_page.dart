@@ -1,4 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
+import 'package:expiration_date/core/language.dart';
 import 'package:expiration_date/core/thema/app_colors.dart';
+import 'package:expiration_date/generated/locale_keys.g.dart';
 import 'package:expiration_date/pages/product_page/product_page.dart';
 import 'package:expiration_date/pages/supplier_page/supplier_page.dart';
 import 'package:expiration_date/widgets/custom_button_widget.dart';
@@ -27,6 +30,7 @@ class _HomePageState extends State<HomePage> {
             fontWeight: FontWeight.bold,
           ),
         ),
+        actions: [languagesDropdownMenu()],
       ),
       body: Stack(
         alignment: Alignment.bottomCenter,
@@ -52,7 +56,7 @@ class _HomePageState extends State<HomePage> {
                         bottom: 15,
                       ),
                       child: CustomButton(
-                        label: 'DAILY REPORT',
+                        label: LocaleKeys.daily_report.tr(),
                         onPress: () {},
                       ),
                     ),
@@ -61,7 +65,7 @@ class _HomePageState extends State<HomePage> {
                         bottom: 15,
                       ),
                       child: CustomButton(
-                        label: 'WEEKLY REPORT',
+                        label: LocaleKeys.weekly_report.tr(),
                         onPress: () {},
                       ),
                     ),
@@ -70,7 +74,7 @@ class _HomePageState extends State<HomePage> {
                         bottom: 15,
                       ),
                       child: CustomButton(
-                        label: 'ADD PRODUCT',
+                        label: LocaleKeys.add_supplier.tr(),
                         onPress: () {},
                       ),
                     ),
@@ -79,7 +83,7 @@ class _HomePageState extends State<HomePage> {
                         bottom: 15,
                       ),
                       child: CustomButton(
-                        label: 'ADD SUPPLIER',
+                        label: LocaleKeys.add_product.tr(),
                         onPress: () {},
                       ),
                     ),
@@ -88,7 +92,7 @@ class _HomePageState extends State<HomePage> {
                         bottom: 15,
                       ),
                       child: CustomButton(
-                        label: 'ALL SUPPLIERS',
+                        label: LocaleKeys.all_supplier.tr(),
                         onPress: () {
                           Navigator.push(
                             context,
@@ -100,7 +104,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     CustomButton(
-                      label: 'ALL PRODUCTS',
+                      label: LocaleKeys.all_products.tr(),
                       onPress: () {
                         Navigator.push(
                           context,
@@ -116,6 +120,42 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget languagesDropdownMenu() {
+    return SizedBox(
+      child: PopupMenuButton<Language>(
+        icon: const Icon(
+          Icons.language,
+          color: AppColors.mainBlack,
+        ),
+        onSelected: (language) {
+          context.setLocale(
+            Locale(language.languageCode),
+          );
+        },
+        itemBuilder: (_) => Language.languageList()
+            .map(
+              (e) => PopupMenuItem<Language>(
+                value: e,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      e.flag,
+                      style: const TextStyle(fontSize: 30),
+                    ),
+                    const SizedBox(
+                      width: 5,
+                    ),
+                    Text(e.name),
+                  ],
+                ),
+              ),
+            )
+            .toList(),
       ),
     );
   }

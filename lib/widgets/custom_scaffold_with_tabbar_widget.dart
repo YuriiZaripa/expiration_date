@@ -1,4 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:expiration_date/core/thema/app_colors.dart';
+import 'package:expiration_date/generated/locale_keys.g.dart';
 import 'package:flutter/material.dart';
 
 class CustomScaffoldWithTabBar extends StatelessWidget {
@@ -17,9 +19,9 @@ class CustomScaffoldWithTabBar extends StatelessWidget {
         backgroundColor: AppColors.mainWhite,
         appBar: AppBar(
           centerTitle: true,
-          title: const Text(
-            'SUPPLIERS',
-            style: TextStyle(
+          title: Text(
+            LocaleKeys.suppliers.tr(),
+            style: const TextStyle(
               color: AppColors.mainWhite,
               letterSpacing: 1,
               fontWeight: FontWeight.w600,
@@ -77,12 +79,14 @@ class CustomScaffoldWithTabBar extends StatelessWidget {
                           ),
                           labelColor: AppColors.mainWhite,
                           labelStyle: const TextStyle(
+                            fontSize: 11,
                             letterSpacing: 1,
                             fontWeight: FontWeight.w600,
                           ),
                           labelPadding:
                               const EdgeInsets.symmetric(horizontal: 0),
                           unselectedLabelStyle: const TextStyle(
+                            fontSize: 11,
                             color: AppColors.mainWhite,
                             fontWeight: FontWeight.w300,
                           ),
@@ -105,8 +109,8 @@ class CustomScaffoldWithTabBar extends StatelessWidget {
                                   ),
                                 ),
                                 padding: const EdgeInsets.all(8),
-                                child: const Text(
-                                  "EXCHANGE",
+                                child: Text(
+                                  LocaleKeys.exchange.tr(),
                                 ),
                               ),
                             ),
@@ -120,8 +124,8 @@ class CustomScaffoldWithTabBar extends StatelessWidget {
                                   ),
                                 ),
                                 padding: const EdgeInsets.all(8),
-                                child: const Text(
-                                  "WRITE-OFF",
+                                child: Text(
+                                  LocaleKeys.write_off.tr(),
                                 ),
                               ),
                             ),
@@ -135,8 +139,8 @@ class CustomScaffoldWithTabBar extends StatelessWidget {
                                   ),
                                 ),
                                 padding: const EdgeInsets.all(8),
-                                child: const Text(
-                                  "RETURN",
+                                child: Text(
+                                  LocaleKeys.regular.tr(),
                                 ),
                               ),
                             ),

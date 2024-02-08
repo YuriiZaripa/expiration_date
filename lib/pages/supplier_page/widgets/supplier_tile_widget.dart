@@ -1,4 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:expiration_date/domain/entities/supplier.dart';
+import 'package:expiration_date/generated/locale_keys.g.dart';
 import 'package:flutter/material.dart';
 
 class SupplierTile extends StatelessWidget {
@@ -26,8 +28,8 @@ class SupplierTile extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text('$notifyingText: ${supplier.period} days'),
-            Text('sale: ${supplier.sale} %')
+            Text('$notifyingText: ${supplier.period} ${LocaleKeys.days.tr()}'),
+            Text('${LocaleKeys.sale.tr()}: ${supplier.sale} %')
           ],
         ),
       ),

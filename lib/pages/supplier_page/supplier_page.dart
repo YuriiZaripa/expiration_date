@@ -1,5 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:expiration_date/core/enums/enums.dart';
 import 'package:expiration_date/core/thema/app_colors.dart';
+import 'package:expiration_date/generated/locale_keys.g.dart';
 import 'package:expiration_date/pages/supplier_page/bloc/supplier_bloc.dart';
 import 'package:expiration_date/pages/supplier_page/bloc/supplier_event.dart';
 import 'package:expiration_date/pages/supplier_page/bloc/supplier_state.dart';
@@ -49,7 +51,7 @@ class _SupplierPageState extends State<SupplierPage> {
             children: [
               SupplierTileList(
                 suppliers: suppliers.exchange,
-                notifyingText: 'NOTIFYING PERIOD',
+                notifyingText: LocaleKeys.notify_period.tr(),
               ),
               SupplierTileList(suppliers: suppliers.writeOff),
               SupplierTileList(suppliers: suppliers.regular),

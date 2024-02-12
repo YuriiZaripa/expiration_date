@@ -33,6 +33,7 @@ class _SupplierPageState extends State<SupplierPage> {
   Widget build(BuildContext context) {
 
     return CustomScaffoldWithTabBar(
+      title: LocaleKeys.suppliers.tr(),
       body: BlocBuilder<SupplierBloc, SupplierState>(
         bloc: supplierBloc,
         builder: (BuildContext context, SupplierState state) {

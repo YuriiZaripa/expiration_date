@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:expiration_date/core/language.dart';
 import 'package:expiration_date/core/thema/app_colors.dart';
 import 'package:expiration_date/generated/locale_keys.g.dart';
+import 'package:expiration_date/pages/daily_report_page/daiky_report_page.dart';
 import 'package:expiration_date/pages/product_page/product_page.dart';
 import 'package:expiration_date/pages/supplier_page/supplier_page.dart';
 import 'package:expiration_date/widgets/custom_button_widget.dart';
@@ -57,7 +58,14 @@ class _HomePageState extends State<HomePage> {
                       ),
                       child: CustomButton(
                         label: LocaleKeys.daily_report.tr(),
-                        onPress: () {},
+                        onPress: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const DailyReportPage(),
+                            ),
+                          );
+                        },
                       ),
                     ),
                     Padding(

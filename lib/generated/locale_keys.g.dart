@@ -20,5 +20,8 @@ abstract class  LocaleKeys {
   static const produced = 'produced';
   static const expiration_date = 'expiration_date';
   static const discount = 'discount';
+  static const daily_report_list = 'daily_report_list';
+  static const stock_balance = 'stock_balance';
+  static const no_data = 'no_data';
 
 }

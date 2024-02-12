@@ -33,7 +33,10 @@ class CodegenLoader extends AssetLoader{
   "search": "Search",
   "produced": "Produced",
   "expiration_date": "Expiration date",
-  "discount": "Discount"
+  "discount": "Discount",
+  "daily_report_list": "DAILY REPORT LIST",
+  "stock_balance": "Stock balance: {}",
+  "no_data": "no data"
 };
 static const Map<String,dynamic> uk = {
   "daily_report": "ЩОДЕННИЙ ЗВІТ",
@@ -54,7 +57,10 @@ static const Map<String,dynamic> uk = {
   "search": "Пошук",
   "produced": "Вироблено",
   "expiration_date": "Строк придатності",
-  "discount": "Знижка"
+  "discount": "Знижка",
+  "daily_report_list": "ЩОДЕННИЙ ЗВІТ",
+  "stock_balance": "Залишок товару: {}",
+  "no_data": "дані відсутні"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "uk": uk};
 }

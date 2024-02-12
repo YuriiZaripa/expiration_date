@@ -10,4 +10,7 @@ sealed class UrlConstants {
   static const String suppliersByConditionUrl = '/suppliers/byReturnConditionType';
 
   static const String productsUrl = '/products';
+
+  static const String reportsUrl = '/reports';
+  static const String dailyReportUrl = '$reportsUrl/daily';
 }

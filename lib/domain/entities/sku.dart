@@ -7,6 +7,7 @@ class Sku {
   final String title;
   final String? image;
   final Supplier supplier;
+  final int? stockBalance;
 
   Sku({
     required this.id,
@@ -15,6 +16,7 @@ class Sku {
     required this.title,
     this.image,
     required this.supplier,
+    this.stockBalance,
   });
 
   factory Sku.fromJson(Map<String, dynamic> json) {
@@ -25,6 +27,7 @@ class Sku {
       barCode: (json['barCode'] as List).map((e) => e as String).toList(),
       image: json['image'] as String?,
       supplier: Supplier.fromJson(json['supplier']),
+      stockBalance: json['stockBalance'] as int?,
     );
   }
 }

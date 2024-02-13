@@ -19,5 +19,9 @@
   "search": "Search",
   "produced": "Produced",
   "expiration_date": "Expiration date",
-  "discount": "Discount"
+  "discount": "Discount",
+
+  "daily_report_list": "DAILY REPORT LIST",
+  "stock_balance": "Stock balance: {}",
+  "no_data": "no data"
 }

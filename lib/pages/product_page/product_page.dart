@@ -47,123 +47,29 @@ class _ProductPageState extends State<ProductPage> {
           ),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 10,
-        ),
-        child: BlocBuilder<ProductBloc, ProductState>(
-          bloc: productBloc,
-          builder: (BuildContext context, ProductState state) {
-            if (state.blocStatus == BlocStatus.loading ||
-                state.blocStatus == BlocStatus.none) {
-              return const Center(
-                child: CircularProgressIndicator(
-                  color: AppColors.mainRed,
-                ),
-              );
-            } else if (state.blocStatus == BlocStatus.error ||
-                state.products == null) {
-              return const Center(
-                child: Text('OOPS!'),
-              );
-            }
-
-            return ProductListTileWidget(
-              products: state.products!,
+      body: BlocBuilder<ProductBloc, ProductState>(
+        bloc: productBloc,
+        builder: (BuildContext context, ProductState state) {
+          if (state.blocStatus == BlocStatus.loading ||
+              state.blocStatus == BlocStatus.none) {
+            return const Center(
+              child: CircularProgressIndicator(
+                color: AppColors.mainRed,
+              ),
             );
-          },
-        ),
+          } else if (state.blocStatus == BlocStatus.error ||
+              state.products == null) {
+            return const Center(
+              child: Text('OOPS!'),
+            );
+          }
+
+          return ProductListTileWidget(
+            displayStockBalance: false,
+            products: state.products!,
+          );
+        },
       ),
     );
   }
 }
-
-// Scaffold
-// (
-// backgroundColor: AppColors.mainWhite,
-// appBar: AppBar(
-// centerTitle: true,
-// backgroundColor: AppColors.mainRed,
-// title: const Text(
-// 'PRODUCTS',
-// style: TextStyle(
-// color: AppColors.white,
-// fontWeight: FontWeight.bold,
-// ),
-// ),
-// actions: [
-// IconButton(
-// icon: const Icon( Icons.filter_alt,
-// color: AppColors.mainBlack,
-// ),
-// onPressed: () {},
-// ),
-// ],
-// bottom: PreferredSize(
-// preferredSize: const Size.fromHeight(120),
-// child: Padding(
-// padding: const EdgeInsets.all(5.0),
-// child: Container(
-// width: double.infinity,
-// decoration: BoxDecoration(
-// color: const Color(0xFF242024),
-// borderRadius: BorderRadius.vertical(
-// top: Radius.elliptical(
-// MediaQuery.of(context).size.width,
-// 20.0,
-// ),
-// bottom: Radius.elliptical(
-// MediaQuery.of(context).size.width,
-// 60.0,
-// ),
-// ),
-// ),
-// child: Padding(
-// padding: const EdgeInsets.symmetric(
-// horizontal: 50,
-// vertical: 30,
-// ),
-// child: Column(
-// children: [
-// Container(
-// height: 50,
-// decoration: BoxDecoration(
-// color: AppColors.mainWhite,
-// borderRadius: BorderRadius.circular(5),
-// border: Border.all(
-// color: AppColors.mainBlack,
-// ),
-// ),
-// child: const Padding(
-// padding: EdgeInsets.all(8.0),
-// child: TextField(
-// decoration: InputDecoration(
-// labelText: "Search",
-// suffixIcon: Icon(Icons.search),
-// ),
-// ),
-// )
-// ),
-// ],
-// ),
-// ),
-// ),
-// ),
-// )
-// )
-// ,
-// body
-// :
-// //   ],
-// // ),
-// );
-//
-// const Padding(
-// padding: EdgeInsets.all(8.0),
-// child: TextField(
-// decoration: InputDecoration(
-// labelText: "Search",
-// suffixIcon: Icon(Icons.search),
-// ),
-// ),
-// ),

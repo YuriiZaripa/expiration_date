@@ -7,9 +7,11 @@ class CustomScaffoldWithTabBar extends StatelessWidget {
   const CustomScaffoldWithTabBar({
     super.key,
     required this.body,
+    required this.title,
   });
 
   final Widget body;
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,7 @@ class CustomScaffoldWithTabBar extends StatelessWidget {
         appBar: AppBar(
           centerTitle: true,
           title: Text(
-            LocaleKeys.suppliers.tr(),
+            title,
             style: const TextStyle(
               color: AppColors.mainWhite,
               letterSpacing: 1,

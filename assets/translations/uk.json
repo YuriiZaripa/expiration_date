@@ -19,5 +19,9 @@
   "search": "Пошук",
   "produced": "Вироблено",
   "expiration_date": "Строк придатності",
-  "discount": "Знижка"
+  "discount": "Знижка",
+
+  "daily_report_list": "ЩОДЕННИЙ ЗВІТ",
+  "stock_balance": "Залишок товару: {}",
+  "no_data": "дані відсутні"
 }

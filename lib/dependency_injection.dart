@@ -10,7 +10,9 @@ import 'package:expiration_date/domain/repository/i_supplier_repository.dart';
 import 'package:expiration_date/domain/usecases/get_all_products_usecase.dart';
 import 'package:expiration_date/domain/usecases/get_all_suppliers_usecase.dart';
 import 'package:expiration_date/domain/usecases/get_daily_report_usecase.dart';
-import 'package:expiration_date/pages/daily_report_page/bloc/daily_report_bloc.dart';
+import 'package:expiration_date/domain/usecases/post_daily_report.dart';
+import 'package:expiration_date/pages/daily_report_page/bloc/daily_report_data_bloc.dart';
+import 'package:expiration_date/pages/daily_report_page/bloc/dayli_report_bloc/dailt_report_bloc.dart';
 import 'package:expiration_date/pages/product_page/bloc/product_bloc.dart';
 import 'package:expiration_date/pages/supplier_page/bloc/supplier_bloc.dart';
 import 'package:get_it/get_it.dart';
@@ -63,6 +65,11 @@ void setup() {
         getIt.get(),
       ),
     )
+    ..registerLazySingleton<IPostDailyReportUsecase>(
+      () => PostDailyReportUsecase(
+        getIt.get(),
+      ),
+    )
 
     //BLOCS
     ..registerLazySingleton<SupplierBloc>(
@@ -72,6 +79,11 @@ void setup() {
     )
     ..registerLazySingleton<ProductBloc>(
       () => ProductBloc(
+        getIt.get(),
+      ),
+    )
+    ..registerLazySingleton<DailyReportDataBloc>(
+      () => DailyReportDataBloc(
         getIt.get(),
       ),
     )

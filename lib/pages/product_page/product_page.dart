@@ -5,8 +5,9 @@ import 'package:expiration_date/generated/locale_keys.g.dart';
 import 'package:expiration_date/pages/product_page/bloc/product_bloc.dart';
 import 'package:expiration_date/pages/product_page/bloc/product_event.dart';
 import 'package:expiration_date/pages/product_page/bloc/product_state.dart';
-import 'package:expiration_date/pages/product_page/widgets/product_list_tipe_widget.dart';
-import 'package:expiration_date/widgets/custom_scaffold_with_additions_widget.dart';
+import 'package:expiration_date/pages/product_page/single_product_page.dart';
+import 'package:expiration_date/pages/product_page/widgets/product_tile.dart';
+import 'package:expiration_date/pages/widgets/custom_scaffold_with_additions_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:expiration_date/dependency_injection.dart' as di;
@@ -31,6 +32,7 @@ class _ProductPageState extends State<ProductPage> {
   @override
   Widget build(BuildContext context) {
     return CustomScaffoldWithAdditionsWidget(
+      title:  LocaleKeys.products.tr(),
       additionalAppBarButton: IconButton(
         icon: const Icon(
           Icons.filter_alt,
@@ -39,11 +41,12 @@ class _ProductPageState extends State<ProductPage> {
         onPressed: () {},
       ),
       appBarAdditions: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(5.0),
         child: TextField(
           decoration: InputDecoration(
-            labelText: LocaleKeys.search.tr(),
+            hintText: LocaleKeys.search.tr(),
             suffixIcon: const Icon(Icons.search),
+              border: InputBorder.none
           ),
         ),
       ),
@@ -59,14 +62,48 @@ class _ProductPageState extends State<ProductPage> {
             );
           } else if (state.blocStatus == BlocStatus.error ||
               state.products == null) {
-            return const Center(
-              child: Text('OOPS!'),
+            return Center(
+              child: Text(LocaleKeys.error_plug.tr()),
             );
           }
+          var products = state.products!;
 
-          return ProductListTileWidget(
-            displayStockBalance: false,
-            products: state.products!,
+          return Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 10,
+            ),
+            child: ListView.separated(
+              itemCount: products.length,
+              itemBuilder: (_, index) {
+                var product = products[index];
+
+                return Padding(
+                  padding: const EdgeInsets.only(top: 5),
+
+                      child: InkWell(
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SingleProductPage(product: product),
+                          ),
+                        ),
+                        child: ProductTile(
+                          product: products[index],
+                          displayStockBalance: false,
+                        ),
+                      ),
+
+                  );
+              },
+              separatorBuilder: (_, __) {
+                return const Divider(
+                  color: AppColors.mainBlack,
+                  thickness: 3,
+                  indent: 10,
+                  endIndent: 10,
+                );
+              },
+            ),
           );
         },
       ),

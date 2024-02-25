@@ -2,12 +2,13 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:expiration_date/core/language.dart';
 import 'package:expiration_date/core/thema/app_colors.dart';
 import 'package:expiration_date/generated/locale_keys.g.dart';
-import 'package:expiration_date/pages/daily_report_page/daiky_report_page.dart';
+import 'package:expiration_date/pages/daily_report_page/daily_report_page.dart';
 import 'package:expiration_date/pages/product_page/product_page.dart';
 import 'package:expiration_date/pages/supplier_page/supplier_page.dart';
-import 'package:expiration_date/widgets/custom_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+
+import 'widgets/custom_button_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -22,8 +23,8 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: AppColors.mainWhite,
       appBar: AppBar(
-        centerTitle: true,
         backgroundColor: AppColors.mainRed,
+        centerTitle: true,
         title: const Text(
           'OKWINE',
           style: TextStyle(

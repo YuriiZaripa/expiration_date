@@ -6,6 +6,9 @@
   "all_supplier": "ALL SUPPLIERS",
   "all_products": "ALL PRODUCTS",
 
+  "confirm": "Confirm",
+  "error_plug": "OOPS!",
+
   "suppliers": "SUPPLIERS",
   "exchange": "EXCHANGE",
   "write_off": "WRITE-OFF",
@@ -16,12 +19,20 @@
   "sale": "sale",
 
   "products": "PRODUCTS",
+  "product_info": "PRODUCT INFO",
   "search": "Search",
   "produced": "Produced",
   "expiration_date": "Expiration date",
   "discount": "Discount",
+  "no_data": "no data",
+  "edit": "Edit",
 
   "daily_report_list": "DAILY REPORT LIST",
+  "report": "REPORT",
   "stock_balance": "Stock balance: {}",
-  "no_data": "no data"
+  "all_done": "All is DONE!",
+  "fine": "Everything is FINE!",
+  "quantity": "Quantity:",
+  "quantityError": "You must specify the quantity",
+  "comment": "Comment"
 }

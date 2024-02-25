@@ -96,10 +96,11 @@ class CustomScaffoldWithTabBar extends StatelessWidget {
                             color: AppColors.indicatorRed,
                             border: Border.all(
                               color: AppColors.mainBlack,
-                              width: 2,
+                              width: 4,
                             ),
-                            borderRadius: BorderRadius.circular(5),
+                            borderRadius: BorderRadius.circular(8),
                           ),
+                          dividerColor: Colors.transparent,
                           tabs: [
                             Tab(
                               child: Container(
@@ -107,7 +108,7 @@ class CustomScaffoldWithTabBar extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(5),
                                   border: Border.all(
                                     color: AppColors.mainBlack,
-                                    width: 2,
+                                    width: 1,
                                   ),
                                 ),
                                 padding: const EdgeInsets.all(8),
@@ -122,7 +123,7 @@ class CustomScaffoldWithTabBar extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(5),
                                   border: Border.all(
                                     color: AppColors.mainBlack,
-                                    width: 2,
+                                    width: 1,
                                   ),
                                 ),
                                 padding: const EdgeInsets.all(8),
@@ -137,7 +138,7 @@ class CustomScaffoldWithTabBar extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(5),
                                   border: Border.all(
                                     color: AppColors.mainBlack,
-                                    width: 2,
+                                    width: 1,
                                   ),
                                 ),
                                 padding: const EdgeInsets.all(8),

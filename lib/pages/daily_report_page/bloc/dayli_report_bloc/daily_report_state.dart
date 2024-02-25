@@ -1,25 +1,25 @@
 import 'package:expiration_date/core/enums/enums.dart';
-import 'package:expiration_date/domain/entities/report_data.dart';
+import 'package:expiration_date/domain/entities/daily_report.dart';
 
 class DailyReportState {
   const DailyReportState({
     required this.blocStatus,
-    this.reportData,
+    this.dailyReport,
     this.errorText,
   });
 
   final BlocStatus blocStatus;
-  final ReportData? reportData;
+  final DailyReport? dailyReport;
   final String? errorText;
 
   DailyReportState copyWith({
     required BlocStatus blocStatus,
-    ReportData? reportData,
+    DailyReport? dailyReport,
     String? error,
   }) {
     return DailyReportState(
       blocStatus: blocStatus,
-      reportData: reportData,
+      dailyReport: dailyReport,
       errorText: errorText,
     );
   }

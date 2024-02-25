@@ -21,6 +21,8 @@ class CodegenLoader extends AssetLoader{
   "add_supplier": "ADD SUPPLIER",
   "all_supplier": "ALL SUPPLIERS",
   "all_products": "ALL PRODUCTS",
+  "confirm": "Confirm",
+  "error_plug": "OOPS!",
   "suppliers": "SUPPLIERS",
   "exchange": "EXCHANGE",
   "write_off": "WRITE-OFF",
@@ -30,13 +32,21 @@ class CodegenLoader extends AssetLoader{
   "days": "days",
   "sale": "sale",
   "products": "PRODUCTS",
+  "product_info": "PRODUCT INFO",
   "search": "Search",
   "produced": "Produced",
   "expiration_date": "Expiration date",
   "discount": "Discount",
+  "no_data": "no data",
+  "edit": "Edit",
   "daily_report_list": "DAILY REPORT LIST",
+  "report": "REPORT",
   "stock_balance": "Stock balance: {}",
-  "no_data": "no data"
+  "all_done": "All is DONE!",
+  "fine": "Everything is FINE!",
+  "quantity": "Quantity:",
+  "quantityError": "You must specify the quantity",
+  "comment": "Comment"
 };
 static const Map<String,dynamic> uk = {
   "daily_report": "ЩОДЕННИЙ ЗВІТ",
@@ -45,6 +55,8 @@ static const Map<String,dynamic> uk = {
   "add_supplier": "ДОДАТИ ПОСТАЧАЛЬНИКА",
   "all_supplier": "ВСІ ПОСТАЧАЛЬНИКИ",
   "all_products": "ВСІ ПРОДУКТИ",
+  "confirm": "Підтвердити",
+  "error_plug": "ЙОЙ!",
   "suppliers": "ПОСТАЧАЛЬНИКИ",
   "exchange": "ФІЗОБМІН",
   "write_off": "СПИСАННЯ",
@@ -54,13 +66,21 @@ static const Map<String,dynamic> uk = {
   "days": "днів",
   "sale": "знижка",
   "products": "ПРОДУКТИ",
+  "product_info": "ІНФОРМАЦІЯ ПРО ПРОДУКТ",
   "search": "Пошук",
   "produced": "Вироблено",
-  "expiration_date": "Строк придатності",
+  "expiration_date": "Придатен до",
   "discount": "Знижка",
+  "no_data": "немає данних",
+  "edit": "Редагувати",
   "daily_report_list": "ЩОДЕННИЙ ЗВІТ",
+  "report": "ЗВІТ",
   "stock_balance": "Залишок товару: {}",
-  "no_data": "дані відсутні"
+  "all_done": "Все ОПРАЦЬОВАНО!",
+  "fine": "Тут все добре, гортай далі!",
+  "quantity": "Кількість:",
+  "quantityError": "Ви маєте вказати кількість",
+  "comment": "Коментар:"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "uk": uk};
 }

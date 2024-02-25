@@ -2,8 +2,12 @@ import 'package:expiration_date/domain/entities/report_data.dart';
 import 'package:expiration_date/domain/repository/i_report_repository.dart';
 
 abstract interface class IGetDailyReportUsecase {
-  Future<({bool isSuccess, ReportData? reportData, String? error,})>
-  call();
+  Future<
+      ({
+        bool isSuccess,
+        ReportData? reportData,
+        String? error,
+      })> call();
 }
 
 class GetDailyReportUsecase implements IGetDailyReportUsecase {
@@ -14,11 +18,10 @@ class GetDailyReportUsecase implements IGetDailyReportUsecase {
   @override
   Future<
       ({
-      bool isSuccess,
-      ReportData? reportData,
-      String? error,
+        bool isSuccess,
+        ReportData? reportData,
+        String? error,
       })> call() async {
-    return reportRepository.getDailyReport();
+    return reportRepository.getDailyReportsData();
   }
 }
-

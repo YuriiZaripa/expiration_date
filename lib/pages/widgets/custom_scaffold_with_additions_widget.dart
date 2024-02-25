@@ -1,18 +1,20 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:expiration_date/core/thema/app_colors.dart';
-import 'package:expiration_date/generated/locale_keys.g.dart';
 import 'package:flutter/material.dart';
 
 class CustomScaffoldWithAdditionsWidget extends StatelessWidget {
   const CustomScaffoldWithAdditionsWidget({
     super.key,
+    required this.title,
     required this.body,
     this.additionalAppBarButton,
     this.appBarAdditions,
+    this.leading,
   });
 
+  final String title;
   final IconButton? additionalAppBarButton;
   final Widget? appBarAdditions;
+  final Widget? leading;
   final Widget body;
 
   @override
@@ -22,8 +24,9 @@ class CustomScaffoldWithAdditionsWidget extends StatelessWidget {
       appBar: AppBar(
           centerTitle: true,
           backgroundColor: AppColors.mainRed,
+          leading: leading,
           title: Text(
-            LocaleKeys.products.tr(),
+            title,
             style: const TextStyle(
               color: AppColors.white,
               fontWeight: FontWeight.bold,
@@ -43,7 +46,10 @@ class CustomScaffoldWithAdditionsWidget extends StatelessWidget {
                 )
               : null,
           bottom: appBarAdditions == null
-              ? null
+              ? PreferredSize(
+                  preferredSize: const Size.fromHeight(30),
+                  child: Container(),
+                )
               : PreferredSize(
                   preferredSize: const Size.fromHeight(120),
                   child: Padding(

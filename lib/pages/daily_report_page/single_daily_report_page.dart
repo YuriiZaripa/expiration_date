@@ -85,7 +85,7 @@ class _SingleDailyReportPageState extends State<SingleDailyReportPage>
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
                   content:
-                      Text('OOPS! ${current.dailyReport!.product.sku.title}'),
+                  Text('OOPS! ${current.dailyReport!.product.sku.title}'),
                   backgroundColor: AppColors.indicatorRed,
                   behavior: SnackBarBehavior.floating,
                 ),
@@ -106,151 +106,153 @@ class _SingleDailyReportPageState extends State<SingleDailyReportPage>
                   '${widget.products.length - _dailyReportQueue.length}/${widget.products.length}'),
             );
           }),
-      body: GestureDetector(
-        //InkWell
-        onTap: () {
-          FocusManager.instance.primaryFocus?.unfocus();
-        },
-        onHorizontalDragEnd: (DragEndDetails details) {
-          if (details.primaryVelocity! > 0) {
-            _nextProduct(context);
-          } else {
-            _defer(context);
-          }
-        },
-        child: Builder(builder: (context) {
-          if (_dailyReportQueue.isEmpty) {
-            return Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    LocaleKeys.all_done.tr(),
-                    style: const TextStyle(
-                      fontSize: 20,
-                    ),
+      body: Builder(builder: (context) {
+        if (_dailyReportQueue.isEmpty) {
+          return Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  LocaleKeys.all_done.tr(),
+                  style: const TextStyle(
+                    fontSize: 20,
                   ),
-                  const Icon(
-                    Icons.favorite,
-                    size: 100,
-                    color: AppColors.mainRed,
-                  ),
-                ],
-              ),
-            );
-          }
-
-          var dailyReport = _dailyReportQueue.first;
-
-          return Form(
-            key: _dailyReportFormKey,
-            child: SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.only(
-                  right: 10,
-                  top: 10,
                 ),
-                child: Column(
-                  children: [
-                    SingleProductView(product: dailyReport.product),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                        top: 15,
-                        left: 10,
-                      ),
-                      child: TextFormField(
-                        controller: _quantityController,
-                        validator: (value) => value == null || value.isEmpty
-                            ? LocaleKeys.quantityError.tr()
-                            : null,
-                        decoration: InputDecoration(
-                            labelText: LocaleKeys.quantity.tr(),
-                            labelStyle: const TextStyle(
-                              fontSize: 18,
-                              color: AppColors.mainBlack,
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide:
-                                  const BorderSide(color: AppColors.mainBlack),
-                              borderRadius: BorderRadius.circular(20.0),
-                            ),
-                            border: OutlineInputBorder(
-                              borderSide:
-                                  const BorderSide(color: AppColors.mainBlack),
-                              borderRadius: BorderRadius.circular(20.0),
-                            )),
-                        keyboardType: TextInputType.number,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                        top: 15,
-                        left: 10,
-                      ),
-                      child: TextFormField(
-                        controller: _commentController,
-                        maxLines: 4,
-                        maxLength: 255,
-                        decoration: InputDecoration(
-                          labelText: LocaleKeys.comment.tr(),
-                          labelStyle: const TextStyle(
-                            fontSize: 18,
-                            color: AppColors.mainBlack,
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide:
-                                const BorderSide(color: AppColors.mainBlack),
-                            borderRadius: BorderRadius.circular(20.0),
-                          ),
-                          border: OutlineInputBorder(
-                            borderSide:
-                                const BorderSide(color: AppColors.mainBlack),
-                            borderRadius: BorderRadius.circular(20.0),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: SizedBox(
-                          width: 350,
-                          child: CustomButton(
-                              label: LocaleKeys.confirm.tr(),
-                              onPress: () => _nextProduct(context))),
-                    )
-                  ],
+                const Icon(
+                  Icons.favorite,
+                  size: 100,
+                  color: AppColors.mainRed,
                 ),
-              ),
+              ],
             ),
           );
-        }),
+        }
+
+        var dailyReport = _dailyReportQueue.first;
+        return Dismissible(
+          key: UniqueKey(),
+          background: Container(color: Colors.green),
+          secondaryBackground: Container(color: Colors.red),
+          onDismissed: (direction) {
+            if (direction == DismissDirection.startToEnd) {
+              _nextProduct(context);
+            } else {
+              _defer(context);
+            }
+          },
+          confirmDismiss: (direction) {
+            if (direction == DismissDirection.startToEnd) return _confirmDismiss();
+            return Future.value(true);
+          },
+          child: InkWell(
+              onTap: () {
+                FocusManager.instance.primaryFocus?.unfocus();
+              },
+              child: Form(
+                key: _dailyReportFormKey,
+                child: SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                      right: 10,
+                      top: 10,
+                    ),
+                    child: Column(
+                      children: [
+                        SingleProductView(product: dailyReport.product),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            top: 15,
+                            left: 10,
+                          ),
+                          child: TextFormField(
+                            controller: _quantityController,
+                            validator: (value) => value == null || value.isEmpty
+                                ? LocaleKeys.quantityError.tr()
+                                : null,
+                            decoration: InputDecoration(
+                                labelText: LocaleKeys.quantity.tr(),
+                                labelStyle: const TextStyle(
+                                  fontSize: 18,
+                                  color: AppColors.mainBlack,
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide:
+                                  const BorderSide(color: AppColors.mainBlack),
+                                  borderRadius: BorderRadius.circular(20.0),
+                                ),
+                                border: OutlineInputBorder(
+                                  borderSide:
+                                  const BorderSide(color: AppColors.mainBlack),
+                                  borderRadius: BorderRadius.circular(20.0),
+                                )),
+                            keyboardType: TextInputType.number,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            top: 15,
+                            left: 10,
+                          ),
+                          child: TextFormField(
+                            controller: _commentController,
+                            maxLines: 4,
+                            maxLength: 255,
+                            decoration: InputDecoration(
+                              labelText: LocaleKeys.comment.tr(),
+                              labelStyle: const TextStyle(
+                                fontSize: 18,
+                                color: AppColors.mainBlack,
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide:
+                                const BorderSide(color: AppColors.mainBlack),
+                                borderRadius: BorderRadius.circular(20.0),
+                              ),
+                              border: OutlineInputBorder(
+                                borderSide:
+                                const BorderSide(color: AppColors.mainBlack),
+                                borderRadius: BorderRadius.circular(20.0),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: SizedBox(
+                              width: 350,
+                              child: CustomButton(
+                                  label: LocaleKeys.confirm.tr(),
+                                  onPress: () => _nextProduct(context))),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              )
+          ),
+        );},
       ),
     );
   }
 
-  void _nextProduct(BuildContext context) {
-    if (!_dailyReportFormKey.currentState!.validate()) return;
+  Future<bool?> _confirmDismiss() async {
+    return _dailyReportFormKey.currentState!.validate();
+  }
 
+  void _nextProduct(BuildContext context) {
     _dailyReportQueue.first
       ..comment = _commentController.text
       ..quantity = double.tryParse(_quantityController.text);
 
     _dailyReportBloc
         .add(PostDailyReportEvent(dailyReport: _dailyReportQueue.first));
-    setState(
-      () {
-        _dailyReportQueue.add(_dailyReportQueue.first);
-        _dailyReportQueue.removeFirst();
 
-        _commentController.clear();
-        _quantityController.clear();
-      },
-    );
+    _defer(context);
   }
 
   void _defer(BuildContext context) {
     setState(
-      () {
+          () {
         _dailyReportQueue.add(_dailyReportQueue.first);
         _dailyReportQueue.removeFirst();
 

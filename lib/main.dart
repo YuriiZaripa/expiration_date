@@ -1,52 +1,37 @@
+import 'package:easy_localization/easy_localization.dart';
+import 'package:expiration_date/generated/codegen_loader.g.dart';
+import 'package:expiration_date/pages/home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:expiration_date/dependency_injection.dart' as di;
 
-void main() {
-  runApp(const MyApp());
+
+void main() async {
+  di.setup();
+  WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
+
+  runApp(
+    EasyLocalization(
+        supportedLocales: const [Locale('en'), Locale('uk')],
+        path: 'assets/translations',
+        fallbackLocale: const Locale('en'),
+        assetLoader: const CodegenLoader(),
+        child: const ExpirationDateApp()
+    ),
+  );
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class ExpirationDateApp extends StatelessWidget {
+  const ExpirationDateApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Expiration Date',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(),
+        localizationsDelegates: context.localizationDelegates,
+        supportedLocales: context.supportedLocales,
+        locale: context.locale,
+        home: const HomePage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
-
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text('Expiration Date'),
-      ),
-      body: const Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [Text(
-              'Lets`s start!!!',
-              style: TextStyle(fontSize: 30,),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}

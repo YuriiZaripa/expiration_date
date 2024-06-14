@@ -5,8 +5,7 @@ import 'package:expiration_date/domain/entities/report_data.dart';
 import 'package:expiration_date/data/network_service/expiration_date_api_service.dart';
 
 final class ReportService {
-  Future<
-      ({
+  Future<({
         bool isSuccess,
         ReportData? reportData,
         String? error,
@@ -22,13 +21,21 @@ final class ReportService {
         error: null,
       );
     } on DioException catch (e) {
-      final result = e.response!.data as Map<String, dynamic>;
+      final result = e.response?.data;
 
-      return (
+      if (result is Map<String, dynamic>) {
+        return (
         isSuccess: false,
         reportData: null,
         error: result['error']['message'].toString(),
-      );
+        );
+      } else {
+        return (
+        isSuccess: false,
+        reportData: null,
+        error: 'Unexpected error format',
+        );
+      }
     }
   }
 

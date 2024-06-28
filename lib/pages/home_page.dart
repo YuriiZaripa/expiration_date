@@ -3,6 +3,7 @@ import 'package:expiration_date/core/language.dart';
 import 'package:expiration_date/core/thema/app_colors.dart';
 import 'package:expiration_date/generated/locale_keys.g.dart';
 import 'package:expiration_date/pages/daily_report_page/daily_report_page.dart';
+import 'package:expiration_date/pages/input_product_page/supplier_input_page.dart';
 import 'package:expiration_date/pages/product_page/product_page.dart';
 import 'package:expiration_date/pages/supplier_page/supplier_page.dart';
 import 'package:flutter/material.dart';
@@ -93,7 +94,14 @@ class _HomePageState extends State<HomePage> {
                       ),
                       child: CustomButton(
                         label: LocaleKeys.add_product.tr(),
-                        onPress: () {},
+                        onPress: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const SupplierInputPage(),
+                            ),
+                          );
+                        },
                       ),
                     ),
                     Padding(

@@ -9,6 +9,7 @@ class CustomScaffoldWithAdditionsWidget extends StatelessWidget {
     this.additionalAppBarButton,
     this.appBarAdditions,
     this.leading,
+    this.floatingActionButton,
   });
 
   final String title;
@@ -16,6 +17,7 @@ class CustomScaffoldWithAdditionsWidget extends StatelessWidget {
   final Widget? appBarAdditions;
   final Widget? leading;
   final Widget body;
+  final Widget? floatingActionButton;
 
   @override
   Widget build(BuildContext context) {
@@ -93,6 +95,7 @@ class CustomScaffoldWithAdditionsWidget extends StatelessWidget {
                   ),
                 )),
       body: body,
+      floatingActionButton: floatingActionButton,
     );
   }
 }

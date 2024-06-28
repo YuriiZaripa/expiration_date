@@ -6,17 +6,19 @@ import 'package:flutter/material.dart';
 class SupplierTile extends StatelessWidget {
   final Supplier supplier;
   final String notifyingText;
+  final Function()? onTap;
 
   const SupplierTile({
     super.key,
     required this.supplier,
     required this.notifyingText,
+    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      onTap: () {},
+      onTap: onTap,
       title: Text(
         supplier.supplierName,
         style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),

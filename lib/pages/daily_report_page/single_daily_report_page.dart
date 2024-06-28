@@ -85,7 +85,7 @@ class _SingleDailyReportPageState extends State<SingleDailyReportPage>
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
                   content:
-                      Text('OOPS! ${current.dailyReport!.product.sku.title}'),
+                  Text('OOPS! ${current.dailyReport!.product.sku.title}'),
                   backgroundColor: AppColors.indicatorRed,
                   behavior: SnackBarBehavior.floating,
                 ),
@@ -145,10 +145,10 @@ class _SingleDailyReportPageState extends State<SingleDailyReportPage>
             return Future.value(true);
           },
           child: InkWell(
-            onTap: () {
-              FocusManager.instance.primaryFocus?.unfocus();
-            },
-            child: Form(
+              onTap: () {
+                FocusManager.instance.primaryFocus?.unfocus();
+              },
+              child: Form(
                 key: _dailyReportFormKey,
                 child: SingleChildScrollView(
                   child: Padding(
@@ -177,12 +177,12 @@ class _SingleDailyReportPageState extends State<SingleDailyReportPage>
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderSide:
-                                      const BorderSide(color: AppColors.mainBlack),
+                                  const BorderSide(color: AppColors.mainBlack),
                                   borderRadius: BorderRadius.circular(20.0),
                                 ),
                                 border: OutlineInputBorder(
                                   borderSide:
-                                      const BorderSide(color: AppColors.mainBlack),
+                                  const BorderSide(color: AppColors.mainBlack),
                                   borderRadius: BorderRadius.circular(20.0),
                                 )),
                             keyboardType: TextInputType.number,
@@ -205,12 +205,12 @@ class _SingleDailyReportPageState extends State<SingleDailyReportPage>
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderSide:
-                                    const BorderSide(color: AppColors.mainBlack),
+                                const BorderSide(color: AppColors.mainBlack),
                                 borderRadius: BorderRadius.circular(20.0),
                               ),
                               border: OutlineInputBorder(
                                 borderSide:
-                                    const BorderSide(color: AppColors.mainBlack),
+                                const BorderSide(color: AppColors.mainBlack),
                                 borderRadius: BorderRadius.circular(20.0),
                               ),
                             ),
@@ -252,7 +252,7 @@ class _SingleDailyReportPageState extends State<SingleDailyReportPage>
 
   void _defer(BuildContext context) {
     setState(
-      () {
+          () {
         _dailyReportQueue.add(_dailyReportQueue.first);
         _dailyReportQueue.removeFirst();
 

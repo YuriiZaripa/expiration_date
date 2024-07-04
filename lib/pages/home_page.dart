@@ -6,9 +6,11 @@ import 'package:expiration_date/pages/daily_report_page/daily_report_page.dart';
 import 'package:expiration_date/pages/input_product_page/supplier_input_page.dart';
 import 'package:expiration_date/pages/product_page/product_page.dart';
 import 'package:expiration_date/pages/supplier_page/supplier_page.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import 'input_product_page/input_single_product_page.dart';
 import 'widgets/custom_button_widget.dart';
 
 class HomePage extends StatefulWidget {
@@ -93,12 +95,18 @@ class _HomePageState extends State<HomePage> {
                         bottom: 15,
                       ),
                       child: CustomButton(
-                        label: LocaleKeys.add_product.tr(),
+                        label: kIsWeb
+                            ? LocaleKeys.add_products.tr()
+                            : LocaleKeys.add_product.tr(),
                         onPress: () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const SupplierInputPage(),
+                              builder: (context) {
+                                return kIsWeb
+                                    ? const SupplierInputPage()
+                                    : const InputSingleProductPage();
+                              },
                             ),
                           );
                         },

@@ -4,11 +4,13 @@ abstract class  LocaleKeys {
   static const daily_report = 'daily_report';
   static const weekly_report = 'weekly_report';
   static const add_product = 'add_product';
+  static const add_products = 'add_products';
   static const add_supplier = 'add_supplier';
   static const all_supplier = 'all_supplier';
   static const all_products = 'all_products';
   static const confirm = 'confirm';
   static const error_plug = 'error_plug';
+  static const submit = 'submit';
   static const suppliers = 'suppliers';
   static const exchange = 'exchange';
   static const write_off = 'write_off';
@@ -33,5 +35,8 @@ abstract class  LocaleKeys {
   static const quantity = 'quantity';
   static const quantityError = 'quantityError';
   static const comment = 'comment';
+  static const choseSupplier = 'choseSupplier';
+  static const choseSupplierHint = 'choseSupplierHint';
+  static const sending = 'sending';
 
 }

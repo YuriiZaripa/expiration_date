@@ -23,3 +23,15 @@ Future<Response?> post(
   );
   return response;
 }
+
+Future<Response?> put(
+    String path, {
+      Map<String, dynamic>? queryParameters,
+      dynamic data,
+    }) async {
+  Response response = await NetworkService.instance.dio.post(
+    '${UrlConstants.baseUrl}$path',
+    data: data,
+  );
+  return response;
+}

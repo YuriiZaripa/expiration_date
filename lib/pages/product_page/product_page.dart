@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:expiration_date/generated/locale_keys.g.dart';
 import 'package:expiration_date/core/enums/enums.dart';
 import 'package:expiration_date/core/thema/app_colors.dart';
-import 'package:expiration_date/generated/locale_keys.g.dart';
 import 'package:expiration_date/pages/product_page/bloc/product_bloc.dart';
 import 'package:expiration_date/pages/product_page/bloc/product_event.dart';
 import 'package:expiration_date/pages/product_page/bloc/product_state.dart';

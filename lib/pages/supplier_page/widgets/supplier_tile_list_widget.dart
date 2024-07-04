@@ -7,11 +7,13 @@ import 'package:flutter/material.dart';
 class SupplierTileList extends StatelessWidget {
   final List<Supplier> suppliers;
   final String? notifyingText;
+  final Function()? onTup;
 
   const SupplierTileList({
     super.key,
     required this.suppliers,
     this.notifyingText,
+    this.onTup,
   });
 
   @override
@@ -22,6 +24,7 @@ class SupplierTileList extends StatelessWidget {
         return SupplierTile(
           supplier: suppliers[index],
           notifyingText: notifyingText ?? LocaleKeys.discount_period.tr(),
+          onTap: onTup,
         );
       },
       separatorBuilder: (context, int index) {

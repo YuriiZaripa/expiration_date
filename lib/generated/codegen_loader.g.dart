@@ -1,6 +1,6 @@
 // DO NOT EDIT. This is code generated via package:easy_localization/generate.dart
 
-// ignore_for_file: prefer_single_quotes
+// ignore_for_file: prefer_single_quotes, avoid_renaming_method_parameters
 
 import 'dart:ui';
 
@@ -14,41 +14,7 @@ class CodegenLoader extends AssetLoader{
     return Future.value(mapLocales[locale.toString()]);
   }
 
-  static const Map<String,dynamic> en = {
-  "daily_report": "DAILY REPORT",
-  "weekly_report": "WEEKLY REPORT",
-  "add_product": "ADD PRODUCT",
-  "add_supplier": "ADD SUPPLIER",
-  "all_supplier": "ALL SUPPLIERS",
-  "all_products": "ALL PRODUCTS",
-  "confirm": "Confirm",
-  "error_plug": "OOPS!",
-  "suppliers": "SUPPLIERS",
-  "exchange": "EXCHANGE",
-  "write_off": "WRITE-OFF",
-  "regular": "RETURN",
-  "discount_period": "Discount period",
-  "notify_period": "Notify period",
-  "days": "days",
-  "sale": "sale",
-  "products": "PRODUCTS",
-  "product_info": "PRODUCT INFO",
-  "search": "Search",
-  "produced": "Produced",
-  "expiration_date": "Expiration date",
-  "discount": "Discount",
-  "no_data": "no data",
-  "edit": "Edit",
-  "daily_report_list": "DAILY REPORT LIST",
-  "report": "REPORT",
-  "stock_balance": "Stock balance: {}",
-  "all_done": "All is DONE!",
-  "fine": "Everything is FINE!",
-  "quantity": "Quantity:",
-  "quantityError": "You must specify the quantity",
-  "comment": "Comment"
-};
-static const Map<String,dynamic> uk = {
+  static const Map<String,dynamic> uk = {
   "daily_report": "ЩОДЕННИЙ ЗВІТ",
   "weekly_report": "ТИЖНЕВИЙ ЗВІТ",
   "add_product": "ДОДАТИ ПРОДУКТ",
@@ -56,7 +22,8 @@ static const Map<String,dynamic> uk = {
   "all_supplier": "ВСІ ПОСТАЧАЛЬНИКИ",
   "all_products": "ВСІ ПРОДУКТИ",
   "confirm": "Підтвердити",
-  "error_plug": "ЙОЙ!",
+  "error_plug": "ЙОЙ, СТАЛАСЯ ХАЛЕПА!",
+  "submit": "ПІДТВЕРДИТИ",
   "suppliers": "ПОСТАЧАЛЬНИКИ",
   "exchange": "ФІЗОБМІН",
   "write_off": "СПИСАННЯ",
@@ -80,7 +47,48 @@ static const Map<String,dynamic> uk = {
   "fine": "Тут все добре, гортай далі!",
   "quantity": "Кількість:",
   "quantityError": "Ви маєте вказати кількість",
-  "comment": "Коментар:"
+  "comment": "Коментар:",
+  "choseSupplier": "Обери постачальника",
+  "choseSupplierHint": "Спочатку маєш обрати постачальника",
+  "sending": "Надсилання..."
 };
-static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "uk": uk};
+static const Map<String,dynamic> en = {
+  "daily_report": "DAILY REPORT",
+  "weekly_report": "WEEKLY REPORT",
+  "add_product": "ADD PRODUCT",
+  "add_supplier": "ADD SUPPLIER",
+  "all_supplier": "ALL SUPPLIERS",
+  "all_products": "ALL PRODUCTS",
+  "confirm": "Confirm",
+  "error_plug": "OOPS!",
+  "submit": "SUBMIT",
+  "suppliers": "SUPPLIERS",
+  "exchange": "EXCHANGE",
+  "write_off": "WRITE-OFF",
+  "regular": "RETURN",
+  "discount_period": "Discount period",
+  "notify_period": "Notify period",
+  "days": "days",
+  "sale": "sale",
+  "products": "PRODUCTS",
+  "product_info": "PRODUCT INFO",
+  "search": "Search",
+  "produced": "Produced",
+  "expiration_date": "Expiration date",
+  "discount": "Discount",
+  "no_data": "no data",
+  "edit": "Edit",
+  "daily_report_list": "DAILY REPORT LIST",
+  "report": "REPORT",
+  "stock_balance": "Stock balance: {}",
+  "all_done": "All is DONE!",
+  "fine": "Everything is FINE!",
+  "quantity": "Quantity:",
+  "quantityError": "You must specify the quantity",
+  "comment": "Comment",
+  "choseSupplier": "Chose supplier!",
+  "choseSupplierHint": "At first you need to choose supplier",
+  "sending": "Sending information..."
+};
+static const Map<String, Map<String,dynamic>> mapLocales = {"uk": uk, "en": en};
 }

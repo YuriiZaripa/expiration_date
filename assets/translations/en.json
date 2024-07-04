@@ -2,12 +2,14 @@
   "daily_report": "DAILY REPORT",
   "weekly_report": "WEEKLY REPORT",
   "add_product": "ADD PRODUCT",
+  "add_products": "ADD PRODUCTS",
   "add_supplier": "ADD SUPPLIER",
   "all_supplier": "ALL SUPPLIERS",
   "all_products": "ALL PRODUCTS",
 
   "confirm": "Confirm",
   "error_plug": "OOPS!",
+  "submit": "SUBMIT",
 
   "suppliers": "SUPPLIERS",
   "exchange": "EXCHANGE",
@@ -34,5 +36,9 @@
   "fine": "Everything is FINE!",
   "quantity": "Quantity:",
   "quantityError": "You must specify the quantity",
-  "comment": "Comment"
+  "comment": "Comment",
+
+  "choseSupplier": "Chose supplier!",
+  "choseSupplierHint": "At first you need to choose supplier",
+  "sending": "Sending information..."
 }
